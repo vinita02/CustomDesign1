@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/iv_icon_live_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_live_grey"/>
+
+        <ImageButton
+            android:id="@+id/iv_icon_guid_tv_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_icon_live_grey"
+            android:src="@drawable/icon_guid_tv_grey" />
+
+        <ImageButton
+            android:id="@+id/iv_icon_guid_week_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_icon_guid_tv_grey"
+            android:src="@drawable/icon_guid_week_grey" />
+
+        <ImageButton
+            android:id="@+id/iv_radio_grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_icon_guid_week_grey"
+            android:src="@drawable/radio_grey" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_record_grey"
+            android:layout_below="@id/iv_radio_grey"
+            android:id="@+id/iv_icon_record_grey" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_replay_gey"
+            android:layout_below="@id/iv_icon_record_grey"
+            android:id="@+id/iv_icon_replay_grey"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:src="@drawable/icon_valis_store_grey"
+            android:id="@+id/iv_icon_vialias_store_grey"
+            android:layout_below="@id/iv_icon_replay_grey"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_media_grey"
+            android:layout_below="@id/iv_icon_vialias_store_grey"
+            android:id="@+id/iv_icon_media_grey" />
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_search_grey"
+            android:id="@+id/iv_icon_search_grey"
+            android:layout_below="@+id/iv_icon_media_grey"/>
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_gear_grey"
+            android:id="@+id/iv_icon_gear_grey"
+           />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/image1"
+        android:id="@+id/imageView"
+        android:layout_toRightOf="@+id/linear_layout"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/imageView"
+        android:id="@+id/recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/linear_layout">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+</RelativeLayout>

@@ -11,14 +11,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabBackground="@drawable/tab_background"
+        app:tabGravity="fill"
+        app:tabMode="scrollable"
+        android:clipToPadding="false"
+        app:tabPaddingStart="10dp"
+        app:tabPaddingEnd="10dp"
+        app:tabIndicatorHeight="0dp"
         android:elevation="6dp"
-        android:minHeight="?attr/actionBarSize"/>
+        android:layout_margin="5dp"
+        android:minHeight="?attr/actionBarSize"
+        android:nextFocusDown="@id/recyclerView"
+        android:nextFocusUp="@id/tab_layout1"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_below="@id/tab_layout"
         android:id="@+id/recyclerView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:nextFocusUp="@id/tab_layout"
+        android:nextFocusDown="@id/tab_layout1">
 
     </android.support.v7.widget.RecyclerView>
 
@@ -28,9 +39,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/recyclerView"
         app:tabBackground="@drawable/tab_background"
-        android:elevation="6dp"
         android:minHeight="?attr/actionBarSize"
-        app:tabMode="scrollable"/>
+        app:tabGravity="fill"
+        app:tabMode="scrollable"
+        android:clipToPadding="false"
+        app:tabPaddingStart="10dp"
+        app:tabPaddingEnd="10dp"
+        app:tabIndicatorHeight="0dp"
+        android:elevation="6dp"
+        android:layout_margin="5dp"
+        android:nextFocusUp="@id/recyclerView"
+        android:nextFocusDown="@id/tab_layout"
+        />
 
 
 </RelativeLayout>

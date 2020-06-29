@@ -53,6 +53,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
                 if (hasFocus) {
                     v.setBackgroundColor(Color.YELLOW);
+
                   //  Log.d(TAG, "hasFocus=" + hasFocus );
                 } else {
                     v.setBackgroundColor(Color.LTGRAY);
@@ -73,7 +74,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             public void onClick(View v) {
 
                 selectedPosition=i;
-                notifyDataSetChanged();
+              //  notifyDataSetChanged();
 
                 // open another activity on item click
                 Intent intent = new Intent(context, SecondActivity.class);

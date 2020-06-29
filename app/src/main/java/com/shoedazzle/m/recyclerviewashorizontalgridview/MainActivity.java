@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import java.sql.Array;
@@ -13,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TabLayout tabLayout;
 
     // ArrayList for person names
     ArrayList personName = new ArrayList<>(Arrays.asList("Image1","Image2","Image3","Image4","Image5","Image6","Image7","Image8","Image9","Image10",
@@ -34,20 +37,48 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("First Tab"));
         tabLayout.addTab(tabLayout.newTab().setText("Second Tab"));
         tabLayout.addTab(tabLayout.newTab().setText("Third Tab"));
+
+         final RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+
+
+
+
+       /* TabLayout.Tab tab = tabLayout.getTabAt(0);
+        tab.select();*/
        // tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        tabLayout.setFocusable(true);
+        tabLayout.getTabAt(0);
+        tabLayout.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+
+                //   tabLayout.getTabAt(0).getCustomView().setFocusable(true);
+                  //  viewPager.setCurrentItem(position, true);
+
+                }
+            }
+        });
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                Log.d("TAG","Tab uper tab selected"+tab.getPosition());
                 //viewPager.setCurrentItem(tab.getPosition());
 
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
+                Log.d("TAG","Tab uper unselected"+tab.getPosition());
             }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
+
+                Log.d("TAG","Tab uper reselected"+tab.getPosition());
+
             }
         });
 
@@ -70,11 +101,47 @@ public class MainActivity extends AppCompatActivity {
         tabLayout1.addTab(tabLayout1.newTab().setText("Tab FOURTEEN"));
         tabLayout1.addTab(tabLayout1.newTab().setText("Tab FIFTEEN"));
 
+      /*  TabLayout.Tab tab1 = tabLayout1.getTabAt(0);
+        tab1.select();*/
+        tabLayout1.setFocusable(true);
+        tabLayout1.getTabAt(0);
+
+        tabLayout1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+
+                    tabLayout1.getTabAt(0).getCustomView().setFocusable(true);
+                    //  viewPager.setCurrentItem(position, true);
+
+                }
+            }
+        });
+
+        tabLayout1.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                Log.d("TAG","Tab lower tab selected"+tab.getPosition());
+                //viewPager.setCurrentItem(tab.getPosition());
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                Log.d("TAG","Tab lower unselected"+tab.getPosition());
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+                Log.d("TAG","Tab lower reselected"+tab.getPosition());
+            }
+        });
 
 
 
         //1. get the reference of RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+      //  RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
         //2. set a GridLayoutManager with 3 number of columns , horizontal gravity and false value for reverseLayout to show the items from start to end
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),3,LinearLayoutManager.HORIZONTAL,false);
@@ -84,5 +151,12 @@ public class MainActivity extends AppCompatActivity {
         CustomAdapter customAdapter = new CustomAdapter(MainActivity.this,personName,personImage);
         recyclerView.setAdapter(customAdapter); // set the Adapter to RecyclerView
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+      //  tabLayout.getTabAt(1).select();
+       // tabLayout.getTabAt(0).ge;
     }
 }
